@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الصفحة الشخصية</title>
+    <style>
+       body {
+  margin: 0 auto;
+  padding: 0;
+  background: #ffffff;
+}
+
+.left {
+  left: 25px;
+}
+
+.right {
+  right: 25px;
+}
+
+.center {
+  text-align: center;
+}
+
+.bottom {
+  position: absolute;
+  bottom: 25px;
+}
+
+
+#gradient:after {
+  content: "";
+  position: absolute;
+  background: #195173;
+  left: 50%;
+  margin-top: -67.5px;
+  margin-left: -270px;
+  padding-left: 20px;
+  border-radius: 5px;
+  width: 520px;
+  height: 275px;
+  z-index: -1;
+}
+
+#card {
+  position: absolute;
+  width: 450px;
+  height: 225px;
+  padding: 25px;
+  padding-top: 0;
+  padding-bottom: 0;
+  left: 50%;
+  top: 67.5px;
+  margin-left: -250px;
+  background: #195173;
+  box-shadow: 0 0 5px rgb(255, 255, 255);
+  box-shadow: -20px 0 35px -25px black, 20px 0 35px -25px black;
+  z-index: 5;
+}
+
+#card img {
+  width:125px;
+  height:125px;
+  float: left;
+  border-radius: 0px;
+  margin-right: 20px;
+  -webkit-filter: sepia(1);
+  -moz-filter: sepia(1);
+  filter: sepia(1);
+  border:solid 2px #ffffff;
+}
+
+#card h2 {
+  font-family: courier;
+  color: #ffffff;
+  margin: 0 auto;
+  padding: 0;
+  font-size: 15pt;
+}
+
+#card p {
+  font-family: courier;
+  color: #ffffff;
+  font-size: 12px;
+}
+
+#card span {
+  font-family: courier;
+}
+    </style>
+</head>
+<body>
+
+    <!-- الكود المضاف -->
+    <div id="gradient"></div>
+    <div id="card">
+        <h1>الصفحة الشخصية</h1>
+        <p>الرقم الجامعي: {{ student_id }}</p>
+        <p>البريد الإلكتروني: {{ email }}</p>
+        <h2>مشترياتي</h2>
+        <a href="{{ url_for('index') }}" style="text-decoration: none; color: #4CAF50;">عرض المنتجات</a>
+
+        
+        
+        
+     
+
+   
+    <span class="left bottom">Management System For The Aou Libary</span>
+      <span class="right bottom">MASL</span>
+
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        
+        body {
+            font-family: 'Brush Script MT', cursive;
+            margin: 0;
+        }
+        
+            #logo img {
+    width: 60px;
+    height: 20px;
+    border-radius: 50%;
+}
+
+#logo .site-name {
+    font-size: 24px;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+    margin-left: 10px;
+}
+    /* تصميم القائمة */
+    .nav-buttons {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: flex-end; /* محاذاة الأزرار لليمين */
+    gap: 20px; /* تباعد بين الأزرار */
+    align-items: center;
+    margin-right: 30px; /* مسافة على اليمين */
+}
+
+/* تصميم كل زر */
+.nav-buttons .button {
+    display: inline-block;
+    background-color: #000000; /* اللون الأخضر */
+    color: rgb(255, 255, 255);              /* لون النص */
+    padding: 10px 20px;        /* التباعد الداخلي */
+    text-decoration: none;     /* إزالة التسطير */
+    border-radius: 5px;        /* حواف مستديرة */
+    transition: background-color 0.3s, transform 0.2s; /* تأثير التمرير */
+    font-weight: bold;         /* جعل النص عريض */
+    font-size: 12px;           /* حجم الخط */
+    line-height: 0;          /* لضبط ارتفاع النص */
+    text-align: center;        /* محاذاة النص في المنتصف */
+    vertical-align: middle;    /* محاذاة النص عموديًا في المنتصف */
+}
+
+/* التأكد من أن النص داخل الأزرار متناسق */
+.nav-buttons .button:hover {
+    background-color: #0000ff; /* لون أخضر أغمق عند التمرير */
+    transform: translateY(-3px); /* تأثير التحريك للأعلى */
+}
+
+.nav-buttons .button:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 150, 0, 0.5); /* ظل عند التركيز */
+}
+
+/* تباعد بين الأزرار */
+.nav-buttons li {
+    margin: 0;
+    padding: 0;
+}
+
+        /* كرت العرض */
+        .card {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            margin: 16px;
+            background-color: hsl(204, 90%, 25%);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        /* نموذج الاتصال */
+        form {
+            width: 600px;
+            background: #f1f1f1;
+            margin: 20px auto;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        form input, textarea {
+            width: 90%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        form input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            cursor: pointer;
+        }
+
+        form input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        /* تحسين العرض للأجهزة الصغيرة */
+        @media screen and (max-width: 650px) {
+            .navbar ul {
+                flex-direction: column;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+          <div id="brand">
+            <div id="logo">
+                <img src="/images/msal.png" alt="Site Logo"> <!-- لوجو الموقع -->
+                <span class="site-name">MASL</span> <!-- تعديل الاسم هنا -->
+            </div>            
+          </div>
+          <div id="menu">
+            <div id="menu-toggle">
+              <div id="menu-icon">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+              </div>
+            </div>
+            <ul class="nav-buttons">
+                <li><a href="{{ url_for('register') }}" class="button">Register</a></li>
+                <li><a href="{{ url_for('about') }}" class="button">About</a></li>
+                <li><a href="{{ url_for('login') }}" class="button">Login</a></li>
+                <li><a href="{{ url_for('profile') }}" class="button">Profile</a></li>
+            </ul>
+          </div>
+        </nav>
+      </header>
+
+    <!-- قسم About Us -->
+    <div class="about-section">
+        <h1>About Us</h1>
+        <p>Information about the MSAL</p>
+    </div>
+
+    <!-- كرت العرض -->
+    <div class="content">
+        <div class="card">
+            <h1 style="text-align: center;">MSAL</h1>
+            <p style="text-align: center;">Management System For The Aou Library</p>
+            <p style="text-align: center;">The MSAL website was created to assist the AOU Library in Riyadh and enhance the students' experience with borrowing books...</p>
+        </div>
+
+        <!-- نموذج Contact Us -->
+        <form action="#">
+            <h2>Contact Us!</h2>
+            <p>Say Hello! Or whatever you want!</p>
+            <input type="text" id="name" name="name" placeholder="Your name" required>
+            <input type="email" id="email" name="email" placeholder="Your email" required>
+            <textarea id="message" name="message" placeholder="Your message" rows="4" required></textarea>
+            <input type="submit" value="Send">
+        </form>
+    </div>
+
+</body>
+</html>

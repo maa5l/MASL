@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تسجيل الدخول</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+</head>
+<body>
+
+<div class="container">
+    <h2>تسجيل الدخول</h2>
+    <form action="{{ url_for('login') }}" method="POST">
+        <!-- نموذج تسجيل الدخول -->
+        <input type="text" name="identifier" placeholder="Username or Email">
+        <input type="password" name="password" placeholder="Password">
+        <button type="submit">Login</button>
+    </form>  
+   
+
+
+</div>
+
+<script>
+    // يمكنك إضافة كود JavaScript هنا إذا لزم الأمر
+</script>
+
+</body>
+</html>

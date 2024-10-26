@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <header>
+        <nav>
+          <div id="brand">
+            <div id="logo">
+                <img src="/images/msal.png" alt="Site Logo"> <!-- لوجو الموقع -->
+                <span class="site-name">MASL</span> <!-- تعديل الاسم هنا -->
+            </div>            
+          </div>
+          <div id="menu">
+            <div id="menu-toggle">
+              <div id="menu-icon">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+              </div>
+            </div>
+            <ul class="nav-buttons">
+                <li><a href="{{ url_for('register') }}" class="button">Register</a></li>
+                <li><a href="{{ url_for('about') }}" class="button">About</a></li>
+                <li><a href="{{ url_for('login') }}" class="button">Login</a></li>
+                <li><a href="{{ url_for('profile') }}" class="button">Profile</a></li>
+            </ul>
+          </div>
+        </nav>
+      </header>
+      
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Header Example</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="icon" href="/images/msal.png">
+    <style>
+        #logo {
+    display: flex;
+    align-items: center;
+}
+
+#logo img {
+    width: 60px;
+    height: 20px;
+    border-radius: 50%;
+}
+
+#logo .site-name {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    margin-left: 10px;
+}
+    /* تصميم القائمة */
+    .nav-buttons {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: flex-end; /* محاذاة الأزرار لليمين */
+    gap: 20px; /* تباعد بين الأزرار */
+    align-items: center;
+    margin-right: 30px; /* مسافة على اليمين */
+}
+
+/* تصميم كل زر */
+.nav-buttons .button {
+    display: inline-block;
+    background-color: #000000; /* اللون الأخضر */
+    color: white;              /* لون النص */
+    padding: 10px 20px;        /* التباعد الداخلي */
+    text-decoration: none;     /* إزالة التسطير */
+    border-radius: 5px;        /* حواف مستديرة */
+    transition: background-color 0.3s, transform 0.2s; /* تأثير التمرير */
+    font-weight: bold;         /* جعل النص عريض */
+    font-size: 12px;           /* حجم الخط */
+    line-height: 0;          /* لضبط ارتفاع النص */
+    text-align: center;        /* محاذاة النص في المنتصف */
+    vertical-align: middle;    /* محاذاة النص عموديًا في المنتصف */
+}
+
+/* التأكد من أن النص داخل الأزرار متناسق */
+.nav-buttons .button:hover {
+    background-color: #0000ff; /* لون أخضر أغمق عند التمرير */
+    transform: translateY(-3px); /* تأثير التحريك للأعلى */
+}
+
+.nav-buttons .button:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 150, 0, 0.5); /* ظل عند التركيز */
+}
+
+/* تباعد بين الأزرار */
+.nav-buttons li {
+    margin: 0;
+    padding: 0;
+}
+    /* Modal styles */
+    
+        .bar {
+    width: 100%; /* عرض الشريط كامل الصفحة */
+    height: 4px; /* ارتفاع الشريط */
+    background-color: #000000; /* لون الشريط */
+    position: fixed; /* ثابت في الصفحة */
+    top: 0; /* وضعه في أعلى الصفحة */
+    left: 0; /* يبدأ من يسار الصفحة */
+    z-index: 1000; /* لضمان أن الشريط يظهر فوق كل العناصر */
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header, nav {
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none; /* لإزالة النقاط من القوائم */
+}
+
+        .modal-content {
+            background-color: #ffffff;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<header class="header">
+    <!-- Rest of your header code -->
+</header>
+
+<div class="featured-products">
+    <h2>Books</h2>
+    <div class="product-grid">
+        
+        <!-- المنتج الأول -->
+        <div class="product-card">
+            <img src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1618776395i/57774958.jpg" alt="Product 1">
+            <h3>Messages from the Quran</h3>
+            <button onclick="goToInvoice('Messages from the Quran')" class="button">الشراء</button> 
+        </div>
+
+        <!-- المنتج الثاني -->
+        <div class="product-card">
+            <img src="https://img.youm7.com/ArticleImgs/2021/7/30/473682-%D8%AD%D8%B6%D8%A7%D8%B1%D8%A9-%D8%A7%D9%84%D8%B9%D8%B1%D8%A8.png" alt="Product 2">
+            <h3>حضارة العرب</h3>
+            <button onclick="goToInvoice('حضارة العرب')" class="button">الشراء</button> 
+        </div>
+
+          <!-- المنتج الأول -->
+          <div class="product-card">
+            <img src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1618776395i/57774958.jpg" alt="Product 1">
+            <h3>Messages from the Quran</h3>
+            <button onclick="goToInvoice('Messages from the Quran')" class="button">الشراء</button> 
+        </div>
+          <!-- المنتج الأول -->
+          <div class="product-card">
+            <img src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1618776395i/57774958.jpg" alt="Product 1">
+            <h3>Messages from the Quran</h3>
+            <button onclick="goToInvoice('Messages from the Quran')" class="button">الشراء</button> 
+        </div>
+          <!-- المنتج الأول -->
+          <div class="product-card">
+            <img src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1618776395i/57774958.jpg" alt="Product 1">
+            <h3>Messages from the Quran</h3>
+            <button onclick="goToInvoice('Messages from the Quran')" class="button">الشراء</button> 
+        </div>
+          <!-- المنتج الأول -->
+          <div class="product-card">
+            <img src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1618776395i/57774958.jpg" alt="Product 1">
+            <h3>Messages from the Quran</h3>
+            <button onclick="goToInvoice('Messages from the Quran')" class="button">الشراء</button> 
+        </div>
+          <!-- المنتج الأول -->
+          <div class="product-card">
+            <img src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1618776395i/57774958.jpg" alt="Product 1">
+            <h3>Messages from the Quran</h3>
+            <button onclick="goToInvoice('Messages from the Quran')" class="button">الشراء</button> 
+        </div>
+          <!-- المنتج الأول -->
+          <div class="product-card">
+            <img src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1618776395i/57774958.jpg" alt="Product 1">
+            <h3>Messages from the Quran</h3>
+            <button onclick="goToInvoice('Messages from the Quran')" class="button">الشراء</button> 
+        </div>
+    </div>
+</div>
+
+<script>
+    // دالة الانتقال إلى صفحة الفاتورة
+    function goToInvoice(bookTitle) {
+        // عند الضغط على زر الشراء يتم نقل المستخدم إلى صفحة الفاتورة مع اسم الكتاب
+        window.location.href = `/invoice/${encodeURIComponent(bookTitle)}`;
+    }
+</script>
+
+<script>
+    // Functions to open and close modals
+    function openModal(modalId) {
+        document.getElementById(modalId).style.display = "block";
+    }
+
+    function closeModal(modalId) {
+        document.getElementById(modalId).style.display = "none";
+    }
+
+    // Close modal if clicked outside of it
+    window.onclick = function(event) {
+        const modals = document.getElementsByClassName('modal');
+        for (let i = 0; i < modals.length; i++) {
+            if (event.target == modals[i]) {
+                modals[i].style.display = "none";
+            }
+        }
+    }
+</script>
+
+</body>
+</html>
